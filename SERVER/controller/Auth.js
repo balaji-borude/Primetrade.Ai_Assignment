@@ -2,8 +2,8 @@ import User from "../module/User.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-// Login
-export const Login = async (req, res) => {
+// Login user
+export const SignIn = async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -49,8 +49,8 @@ export const Login = async (req, res) => {
   }
 };
 
-// SignIn
-export const SignIn = async (req, res) => {
+// Create account 
+export const SignUp = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
 
