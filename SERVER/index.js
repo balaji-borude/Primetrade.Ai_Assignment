@@ -22,6 +22,7 @@ app.get('/',(req,res)=>{
     })
 });
 
+// eslint-disable-next-line no-undef
 const PORT=process.env.PORT;
 app.listen(PORT,()=>{
     console.log(`Application is running on the Port ${PORT}`)
