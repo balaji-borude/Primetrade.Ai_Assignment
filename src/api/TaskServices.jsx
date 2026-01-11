@@ -10,7 +10,7 @@ console.log("base URl of api --> ", BASE_URL);
 // eslint-disable-next-line react-refresh/only-export-components
 export const addTask = async(taskData)=>{
     try {
-        const response = await axios.post(`${BASE_URL}/api/v1/createTask`,taskData,{
+        const response = await axios.post(`${BASE_URL}/api/v1/task/createtask`,taskData,{
             headers: { "Content-Type": "application/json" }, 
         });
 
@@ -25,7 +25,7 @@ export const addTask = async(taskData)=>{
 
 export const FetchAllTask = async()=>{
     try {
-        const response = await axios.get(`${BASE_URL}/api/v1/getAllTask`);
+        const response = await axios.get(`${BASE_URL}/api/v1/task/getalltask`);
        // console.log("All Task is fetched", response);
         return response.data.task;
     } catch (error) {
@@ -48,7 +48,7 @@ export const FetchAllTask = async()=>{
 
 export const UpdateTask = async (taskId, updatedTask) => {
     try {
-      const response = await axios.put(`${BASE_URL}/api/v1/updateTask/${taskId}`,updatedTask  );
+      const response = await axios.put(`${BASE_URL}/api/v1/updatetask/${taskId}`,updatedTask  );
   
       console.log("Task Updated:", response.data);
       return response.data;
@@ -59,8 +59,8 @@ export const UpdateTask = async (taskId, updatedTask) => {
   
 export const DeleteTask = async(taskId)=>{
     try {
-        console.log("Getting Url for deltete task",`${BASE_URL}/deleteTask/${taskId}`)
-        const response = await axios.delete(`${BASE_URL}/api/v1/deleteTask/${taskId}`);
+        console.log("Getting Url for deltete task",`${BASE_URL}/deletetask/${taskId}`)
+        const response = await axios.delete(`${BASE_URL}/api/v1/deletetask/${taskId}`);
         return response.data;
 
     } catch (error) {

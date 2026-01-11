@@ -3,11 +3,13 @@ import dotenv from "dotenv";
 import { Connect } from "./config/database.js";
 import userRoutes from "./routes/User.js";
 import taskRoutes from "./routes/taskRoutes.js";
+import cors from 'cors';
+
 
 dotenv.config();
 const app = express();
 app.use(express.json());
-
+app.use(cors())
 Connect();
 
 // routes
@@ -17,7 +19,7 @@ app.use("/api/v1/auth", userRoutes);
 
 // task route
 // Routes
-app.use("/api/v1", taskRoutes);
+app.use("/api/v1/task", taskRoutes);
 
 
 

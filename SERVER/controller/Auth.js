@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import User from "../module/User.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
@@ -42,6 +43,7 @@ export const SignIn = async (req, res) => {
       });
     }
   } catch (error) {
+    console.log(error)
     res.status(500).json({
       success: false,
       message: "Issue in Login the user, please Retry !!",
