@@ -1,16 +1,172 @@
-# React + Vite
+# Scalable REST API with Authentication & Role-Based Access
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a complete implementation of the **Backend Developer (Intern) – Project Assignment**.  
+It delivers a secure, scalable REST API with authentication, role-based access control, CRUD operations, and a basic frontend to test all APIs.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Project Overview
 
-## React Compiler
+This system provides:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Secure user authentication using JWT  
+- Role-based access control (User & Admin)  
+- CRUD APIs for a secondary entity (Tasks/Notes/Products)  
+- API versioning, validation, and centralized error handling  
+- Database integration  
+- API documentation using Postman  
+- Basic frontend UI to test all APIs  
+- Scalable and modular project structure  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 Tech Stack
+
+### Backend
+- Node.js  
+- Express.js  
+- MongoDB / PostgreSQL / MySQL  
+- JWT Authentication  
+- Bcrypt Password Hashing  
+- Express Validator  
+
+### Frontend
+- React.js / Next.js / Vanilla JS  
+- Axios  
+- React Router  
+
+### Tools
+- Postman  
+- GitHub  
+
+backend/
+├── controllers/
+├── routes/
+├── models/
+├── middlewares/
+├── config/
+├── utils/
+└── server.js
+
+frontend/
+├── src/
+│ ├── pages/
+│ ├── components/
+│ ├── api/
+│ └── App.jsx
+
+
+---
+
+## 🔐 Core Features
+
+### Authentication
+- User registration with hashed passwords  
+- Login with JWT token  
+- Protected routes using middleware  
+
+### Role-Based Access
+- Roles: User, Admin  
+- Admin-only endpoints  
+- Role-check middleware  
+
+### CRUD APIs
+- Create  
+- Read  
+- Update  
+- Delete  
+
+### API Standards
+- REST architecture  
+- Proper HTTP status codes  
+- Centralized error handling  
+- Input validation  
+- API versioning: `/api/v1`  
+
+---
+
+## 🖥️ Frontend Features
+
+- Register & Login  
+- JWT-protected dashboard  
+- CRUD operations UI  
+- Error & success messages  
+
+---
+
+## ⚙️ Setup Instructions
+
+
+---
+
+## 🔐 Core Features
+
+### Authentication
+- User registration with hashed passwords  
+- Login with JWT token  
+- Protected routes using middleware  
+
+### Role-Based Access
+- Roles: User, Admin  
+- Admin-only endpoints  
+- Role-check middleware  
+
+### CRUD APIs
+- Create  
+- Read  
+- Update  
+- Delete  
+
+### API Standards
+- REST architecture  
+- Proper HTTP status codes  
+- Centralized error handling  
+- Input validation  
+- API versioning: `/api/v1`  
+
+---
+
+## 🖥️ Frontend Features
+
+- Register & Login  
+- JWT-protected dashboard  
+- CRUD operations UI  
+- Error & success messages  
+
+---
+
+## ⚙️ Setup Instructions
+
+### Clone Repository
+
+```bash
+```bash
+git clone https://github.com/balaji-borude/Primetrade.Ai_Assignment
+cd project-folder
+
+# Backend Setup
+cd backend
+npm install
+
+PORT=5000
+DATABASE_URL=your_database_url
+JWT_SECRET=your_secret_key
+
+npm run dev
+# http://localhost:5000
+
+# Frontend Setup
+cd frontend
+npm install
+npm run dev
+# http://localhost:5173
+
+# Exit bash
+exit
+
+
+
+
+You just want to add a short note in your README after the bash commands explaining how to exit. Add this section.
+
+
