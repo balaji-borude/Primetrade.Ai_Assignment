@@ -7,12 +7,13 @@ import PrivateRoutes from "./components/auth/PrivateRoutes";
 import Dashboard from "./components/core/Dashboard";
 
 import { ACCOUNT_TYPE } from "./constant/constant";
+import Index from "./components/dashboard";
 
 const App = () => {
   // const { user } = localStorage.getItem("user");
-  const user = {
-    role: "User",
-  };
+  // const user = {
+  //   role: "User",
+  // };
 
   return (
     <div className="flex flex-col justify-around h-screen">
@@ -31,7 +32,9 @@ const App = () => {
           <Dashboard />
         </PrivateRoutes> */}
 
-        {user.role == ACCOUNT_TYPE.USER && (
+        <Route path="/dashboard" element={<Index/>}/>
+
+        {/* {user.role == ACCOUNT_TYPE.USER && (
           <>
             <Route path="dashboard/profile" />
           </>
@@ -40,7 +43,7 @@ const App = () => {
           <>
             <Route path="dashboard/profile" />
           </>
-        )}
+        )} */}
 
 
       </Routes>

@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { Connect } from "./config/database.js";
 import userRoutes from "./routes/User.js";
+import taskRoutes from "./routes/taskRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -13,6 +14,11 @@ Connect();
 // auth routes
 //app.use("/api/v1/auth",authRoutes);
 app.use("/api/v1/auth", userRoutes);
+
+// task route
+// Routes
+app.use("/api/v1", taskRoutes);
+
 
 
 app.get('/',(req,res)=>{
