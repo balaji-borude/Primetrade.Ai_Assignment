@@ -18,21 +18,15 @@ const App = () => {
   return (
     <div className="flex flex-col justify-around h-screen">
       <Routes>
-        <Route
-          path="/"
-          element={
-       
-              <Login />
-          
-          }
-        />
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<SignUp/>} />
 
         {/* Whole dahsboard route are private here  */}
         {/* <PrivateRoutes>
           <Dashboard />
         </PrivateRoutes> */}
 
-        <Route path="/dashboard" element={<Index/>}/>
+        <Route path="/dashboard" element={<Index />} />
 
         {/* {user.role == ACCOUNT_TYPE.USER && (
           <>
@@ -44,8 +38,6 @@ const App = () => {
             <Route path="dashboard/profile" />
           </>
         )} */}
-
-
       </Routes>
     </div>
   );

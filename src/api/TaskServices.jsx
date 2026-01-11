@@ -48,7 +48,7 @@ export const FetchAllTask = async()=>{
 
 export const UpdateTask = async (taskId, updatedTask) => {
     try {
-      const response = await axios.put(`${BASE_URL}/api/v1/updatetask/${taskId}`,updatedTask  );
+      const response = await axios.put(`${BASE_URL}/api/v1/task/updatetask/${taskId}`,updatedTask  );
   
       console.log("Task Updated:", response.data);
       return response.data;
