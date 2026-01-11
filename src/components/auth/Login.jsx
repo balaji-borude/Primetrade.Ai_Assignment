@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../../api/AuthServices";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -14,9 +18,12 @@ const Login = () => {
     }));
   }
 
-  function submitHandler(e) {
+  async function submitHandler(e) {
     e.preventDefault();
     console.log("form data --> ", formData);
+    await login(formData);
+    toast.success("Login succesfully");
+   navigate('/dashboard');
   }
 
   return (

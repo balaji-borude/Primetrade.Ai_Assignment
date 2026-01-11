@@ -1,16 +1,23 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { register } from "../../api/AuthServices";
+
 const SignUp = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
     role: "User",
-  });
+  })
+  const navigate= useNavigate();
 
-  const submitHandler = (e) => {
+  const submitHandler = async(e) => {
     e.preventDefault();
     console.log("submitting the form ==>", formData);
+ 
+    // signup  function call for the
+     await register(formData);
+    navigate("/")
   };
 
   const changeHandler = (e) => {

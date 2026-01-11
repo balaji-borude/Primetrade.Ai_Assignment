@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken";
 // Login user
 export const SignIn = async (req, res) => {
   try {
+    console.log("siginin function madhe aloo ")
     const { email, password } = req.body;
 
     //validation

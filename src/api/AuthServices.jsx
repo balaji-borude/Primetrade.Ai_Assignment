@@ -1,11 +1,13 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const login = async (formData) => {
   try {
-    const res = await axios.post(`${BASE_URL}/api/v1/auth/login`, formData);
+    const res = await axios.post(`${BASE_URL}/api/v1/auth/signin`, formData);
 
+    console.log("Login response frnt -->",res)
     const { token, user } = res.data;
 
     if (!token) {
@@ -29,9 +31,12 @@ export const login = async (formData) => {
 // register the suer 
 export const register = async (formData) => {
   try {
-    const res = await axios.post(`${BASE_URL}/api/v1/auth/register`, formData);
+    const res = await axios.post(`${BASE_URL}/api/v1/auth/signup`, formData);
+    toast.success("User Created succesfully")
     return res.data;
+
   } catch (err) {
+    toast.error("registration failed")
     const message =
       err.response?.data?.message ||
       err.message ||
